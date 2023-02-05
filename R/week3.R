@@ -3,8 +3,8 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 #Data Import and Cleaning
 raw_df<-read.csv("C:/Users/meill/Desktop/spring 2023/psy8960-week3/data/week3.csv")
-raw_df$timeStart<-as.POSIXct(raw_df$timeStart,format = "%Y-%m-%d %H:%M:%S")
-raw_df$timeEnd<-as.POSIXct(raw_df$timeEnd,format = "%Y-%m-%d %H:%M:%S")
+raw_df$timeStart<-as.POSIXct(raw_df$timeStart)
+raw_df$timeEnd<-as.POSIXct(raw_df$timeEnd)
 clean_df<-raw_df[!grepl("2017-06", raw_df$timeStart), ]
 clean_df<-clean_df[clean_df$q6 == 1,]
 
